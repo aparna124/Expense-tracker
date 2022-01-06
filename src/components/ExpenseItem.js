@@ -10,7 +10,7 @@ function ExpenseItem(props)
     const year = props.date.getFullYear();
 
     return (
-        <Card className="expense-item">
+        <div className="expense-item">
             <ExpenseDate date={props.date} />
             
 
@@ -19,7 +19,7 @@ function ExpenseItem(props)
                 <div className="expense-item__price">{props.amount}</div>
             </div>
 
-        </Card>
+        </div>
         
 
     );
