@@ -8,7 +8,7 @@ import { useState } from 'react/cjs/react.development';
 const Expenses = (props) =>
 {
 
-    const expenses = props.expenses;
+    const expenses = props.items;
     // const onYearChange = (selectedYear) =>
     // {
     //     console.log(selectedYear);
@@ -26,7 +26,8 @@ const Expenses = (props) =>
       
       <Card className="expenses">
         <ExpensesFilter selected={filteredYear} onChangeFilter={filterChangeHandler}/>
-        <ExpenseItem
+        {props.items.map(expense => <ExpenseItem title={expense.title} amount={expense.amount} date={expense.date} /> )}
+        {/* <ExpenseItem
           title={expenses[0].title}
           amount={expenses[0].amount}
           date={expenses[0].date}
@@ -45,7 +46,7 @@ const Expenses = (props) =>
           title={expenses[3].title}
           amount={expenses[3].amount}
           date={expenses[3].date}
-        />
+        /> */}
       </Card>
     );
 }
